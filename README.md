@@ -1,6 +1,6 @@
 # StatPack
 
-A very simple API for keeping count of page views
+A very simple API for keeping count of page views built using Node.JS and SQLite3
 
 ## Running StatPack
 
@@ -26,6 +26,8 @@ StatPack requires a `name` parameter so it knows which stat to increment.
 
 If `image` is being used, a custom colour can be chosen by specifying a hex colour via `colour`. This parameter should not have a #.
 
+Every time a statpack URL is requested, the count will increment.
+
 ### Example URLs:
 
 This produces an image for the stat `page_counter` with a red colour band.
@@ -39,3 +41,7 @@ http://localhost:3000/stat?name=page_counter_mark_2&mode=text
 ```
 
 NOTE: All requests MUST go to `/stat`
+
+## Managing StatPack
+
+StatPack has a very simple and intuitive console which allows you to quickly manipulate data without the need of an SQLite browser.
