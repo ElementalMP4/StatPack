@@ -94,17 +94,29 @@ function main() {
     consoleInterface.listenForCommands(databaseOps);
 }
 
+function checkConfig() {
+    console.log("Checking config...");
+    if (config.port == undefined) console.log("'port' has not been specified in the config!");
+    else if (config.remote_create == undefined) console.log("'remote_create' has not been specified in the config!");
+    else if (typeof config.port !== "number") console.log("'port' must be a number!");
+    else if (typeof config.remote_create !== "boolean") console.log("'remote_create' must be a boolean!");
+    else {
+        console.log("Config OK!");
+        main();
+    }
+}
+
 function createTable() {
     databaseOps.createTable();
     console.log("Created! Starting...");
-    main();
+    checkConfig();
 }
 
 function checkForTable() {
     console.log("Checking for stats table...");
     if (databaseOps.tableExists()) {
         console.log("Table found! Starting...");
-        main();
+        checkConfig();
     } else {
         console.log("No table found. Creating...");
         createTable();
