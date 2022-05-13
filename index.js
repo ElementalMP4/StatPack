@@ -27,6 +27,7 @@ function generateImage(colour, count) {
     const canvas = createCanvas(500, 75);
     const ctx = canvas.getContext('2d');
 
+    ctx.globalCompositeOperation = "screen";
     roundedClipBox(ctx, 0, 0, canvas.width, canvas.height, 10);
     ctx.fillStyle = "#3A3C3D";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -45,7 +46,7 @@ function generateImage(colour, count) {
     ctx.textAlign = "left";
     ctx.fillText(count, 185, 55);
 
-    return canvas.toDataURL("image/jpeg", 1);
+    return canvas.toDataURL("image/png", 1);
 }
 
 function sendImage(col, count, res) {
