@@ -24,7 +24,7 @@ function roundedClipBox(ctx, x, y, width, height, radius) {
 }
 
 function generateImage(colour, count) {
-    const canvas = createCanvas(500, 75);
+    const canvas = createCanvas(515, 75);
     const ctx = canvas.getContext('2d');
 
     ctx.globalCompositeOperation = "screen";
@@ -37,9 +37,9 @@ function generateImage(colour, count) {
     ctx.textAlign = "left";
     ctx.fillText("Views", 10, 55);
 
-    roundedClipBox(ctx, 175, 0, 325, canvas.height, 10);
+    roundedClipBox(ctx, 175, 0, 340, canvas.height, 10);
     ctx.fillStyle = colour;
-    ctx.fillRect(175, 0, 325, canvas.height);
+    ctx.fillRect(175, 0, 340, canvas.height);
 
     ctx.fillStyle = "#FFFFFF";
     ctx.font = "bold 50px Sans";
