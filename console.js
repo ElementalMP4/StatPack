@@ -77,8 +77,9 @@ create [stat]- Creates a statistic
 update [stat] [count] - Changes a statistic value
 reset [statistic] - Resets a statistic
 get [stat] - Shows a stat
-list - shows all stats
-help - shows this message\n`);
+list - Shows all stats
+help - Shows this message
+quit - Shuts down StatPack\n`);
 }
 
 function handleConsoleCommand(input) {
@@ -106,6 +107,9 @@ function handleConsoleCommand(input) {
             break;
         case "list":
             handleListCommand();
+            break;
+        case "quit":
+            process.exit(0);
             break;
         default:
             console.log("Unknown command '" + command + "' - Try 'help'");

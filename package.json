@@ -4,7 +4,7 @@
     "description": "A simple Node.JS view counter",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node index.js"
     },
     "author": "elementalmp4",
     "license": "ISC",
