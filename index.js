@@ -59,6 +59,7 @@ function sendImage(col, count, res) {
     res.end(buffer);
 }
 
+//Handle incoming requests
 function handleStatRequest(req, res) {
     const returnTextOrImage = req.query.mode ? req.query.mode : "image";
     const statName = req.query.name;
@@ -84,6 +85,7 @@ function handleStatRequest(req, res) {
     }
 }
 
+//Start the webserver and listen for console commands
 function main() {
     app.get("/stat", handleStatRequest);
     app.listen(config.port);
@@ -108,4 +110,5 @@ function checkForTable() {
     }
 }
 
+//The first thing to do is check for the database table.
 checkForTable();
