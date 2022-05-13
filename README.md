@@ -42,7 +42,9 @@ http://localhost:3000/stat?name=page_counter_mark_2&mode=text
 
 To add StatPack to a markdown or HTML file, use something like this:
 ```
-<p style="text-align: center;"><img src="http://your-statpack-server.com/stat?name=elementalmp4-github&colour=ffa500" alt="elementalmp4's page views" /></p>
+<p style="text-align: center;">
+    <img src="http://your-statpack-server.com/stat?name=elementalmp4-github&colour=ffa500" alt="elementalmp4's page views" />
+</p>
 ```
 
 NOTE: All requests MUST go to `/stat`
